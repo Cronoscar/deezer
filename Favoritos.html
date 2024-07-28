@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Favoritos</title>
+        <link rel="stylesheet" href="Favoritos.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://db.onlinewebfonts.com/c/2170a4d71c4da1e4af6ac9f1dd8df365?family=Syntax+Next+LT+W04+Black" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <h1>Deezer</h1>
+                <ul>
+                    <li>
+                        <button class="custom-button">
+                            <i class="fas fa-home"></i> Inicio
+                        </button>
+                    </li>
+                    <li>
+                        <button class="custom-button">
+                            <i class="fa-regular fa-compass"></i> Explorar
+                        </button>
+                    </li>
+                    <li>
+                        <button class="custom-button">
+                            <i class="fa-solid fa-heart"></i> Favoritos
+                        </button>
+                    </li>
+                </ul>
+                <p>
+                    Estás en Deezer Free, actualiza para eliminar anuncios.
+                    <br>                    
+                    <button>Suscribirse</button>
+                </p>
+                <div class="playlists">
+                    <div class="header">
+                        <h2>Playlists</h2> 
+                        <button>
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <ul>
+                        <li>
+                            <button>
+                                <img src="src/img/corazon.jpg" alt="Heart Icon">
+                                <p>Canciones favoritas</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button>
+                                <img src="src/img/corazon.jpg" alt="Heart Icon">
+                                <p>Loved Tracks</p>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main>
+            
+            <input type="text" placeholder="Artistas, canciones, podcasts...">
+            <h3>Favoritos</h3>
+            <p>0 seguidores | 0 seguidos</p>
+            <ul>
+                <li><button class="menu-button">Destacados</button></li>
+                <li><button class="menu-button">Canciones favoritas</button></li>
+                <li><button class="menu-button">Playlists</button></li>
+                <li><button class="menu-button">Álbumes</button></li>
+                <li><button class="menu-button">Artistas</button></li>
+                <li><button class="menu-button">Historial</button></li>
+            </ul>
+            <h2>Escuchado recientemente</h2>
+            <div class="song-card">
+            </div>
+        </main>
+        <footer>
+            <div class="music-player">
+                <div class="song-element">
+                </div>
+                <div class="song-controls">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-random"></i>
+                    <i class="fas fa-step-backward"></i>
+                    <i class="fas fa-play"></i>
+                    <i class="fas fa-step-forward"></i>
+                    <i class="fas fa-repeat"></i>
+                </div>
+                
+                <div class="progress-bar">
+                    <span class="current-time"></span>
+                    <div class="progress"></div>
+                    <span class="total-time"></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+
+        let audio = new Audio('');
+
+
+let playButton = document.querySelector('.fa-play');
+let forwardButton = document.querySelector('.fa-step-forward');
+let backwardButton = document.querySelector('.fa-step-backward');
+let progressBar = document.querySelector('.progress');
+
+
+playButton.addEventListener('click', function() {
+    if (audio.paused) {
+        audio.play();
+        playButton.classList.remove('fa-play');
+        playButton.classList.add('fa-pause');
+    } else {
+        audio.pause();
+        playButton.classList.remove('fa-pause');
+        playButton.classList.add('fa-play');
+    }
+});
+
+forwardButton.addEventListener('click', function() {
+    audio.currentTime += 10;
+});
+
+
+backwardButton.addEventListener('click', function() {
+    audio.currentTime -= 10;
+});
+
+
+audio.addEventListener('timeupdate', function() {
+    let progress = audio.currentTime / audio.duration;
+    progressBar.style.width = progress * 100 + '%';
+});
+        
+        let input = document.querySelector('input[type="text"]');
+
+input.addEventListener('focus', function() {
+    this.style.backgroundColor = '#EBE7EE';
+}, false);
+
+input.addEventListener('blur', function() {
+    if (this.value.length === 0) {
+        this.style.backgroundColor = 'transparent';
+    }
+}, false);
+
+let menuButtons = document.querySelectorAll('.menu-button');
+
+menuButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        
+        menuButtons.forEach(btn => btn.classList.remove('selected'));
+
+       
+        this.classList.add('selected');
+    });
+});
+
+let customButtons = document.querySelectorAll('.custom-button');
+
+customButtons.forEach(button => {
+    button.addEventListener('click', function() {
+       
+        customButtons.forEach(btn => btn.classList.remove('selected'));
+
+        
+        this.classList.add('selected');
+    });
+});
+        
+    </script>
+</body>
+</html>
