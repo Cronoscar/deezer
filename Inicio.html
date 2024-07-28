@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/inicio.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,32 +13,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lilita+One&display=swap" rel="stylesheet">
 
 </head>
-<body id="cuerpo">
+<body style="background-color: #0f0d13;">
     <div id="nav" class="navbar"><img src="img/logo.png" id="logo" alt=""></div>
-    <div id="textinicio"><h1>Conectarse</h1></div>
-    <div class="container" >
-        <div class="mb-3 row">
-        <label for="staticEmail" class="col-sm-2 col-form-label " >Email</label>
-        <br>
-        <div class="col-sm-10">
-          <input type="text"  class="form-control  contenedores"  placeholder="email@example.com">
-        </div>
-      </div>
-      <div class="mb-3 row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control contenedores" id="inputPassword">
-        </div>
-        
+    <div id="textinicio"><h1>Te damos la bienvenida</h1>
+        <p id="texto2">¡Elige tus artistas favoritos para recibir recomendaciones más personalizadas!</p>
     </div>
-    <p id="texto2">He olvidado mi contraseña? </p>
+    <div id="inputBusqueda"> <input type="text" style="width: 40%;">Buscar</div>
+   <div id="generos">  
+
+            
+            
+            
+     </div>
+        <div class="container-fluid">
+            <div class="row" id="artistas">
+               
+            </div>
+        </div>
+   
     
-</div>
-    <div id="contenedor3"><button class="btn btn-primary" id="botondeinicio" onclick="window.location.href='inicio.html'">Iniciar</button></div>
-    <div id="texto3"> <p>O</p></div>
-    <div id="texto4"><p  onclick="window.location.href='registro.html'">¿Todavía no tienes una cuenta Deezer?, Registrate</p></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/38bde20848.js" crossorigin="anonymous"></script>
-
+    <script src="js/inicio.js"></script>
 </body>
 </html>

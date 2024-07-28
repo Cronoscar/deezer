@@ -13,6 +13,9 @@ margin-top: 30px;
     display: flex;
     font-family: "Lilita One", sans-serif;
     justify-content: center;
+
+    align-items: center;
+    
     
 }
 #nav{
@@ -29,7 +32,7 @@ margin-left: 80px;
     height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
 .mb-3{
@@ -71,4 +74,21 @@ margin-left: 80px;
     display: flex;
     justify-content: center;
     width: 100%;
+}
+#texto3{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+     color: white;
+     align-items: center;
+     margin-right: 100px;
+}
+#texto4{
+
+    margin-left: 38%;
+    padding-bottom: 30px;
+}
+#texto4:hover{
+    color: blue;
+    
 }
