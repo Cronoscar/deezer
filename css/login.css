@@ -1,0 +1,74 @@
+#cuerpo{
+
+    background-color: #0f0d13;
+    color: white;
+   /* display: flex;
+    justify-content: center;
+    align-items: center;
+    */height: 100vh;
+    margin:0;
+}
+#textinicio{
+margin-top: 30px;
+    display: flex;
+    font-family: "Lilita One", sans-serif;
+    justify-content: center;
+    
+}
+#nav{
+    border-bottom: 1px solid #A9A6AA;
+    width: 100%;
+    height: 80px;
+}
+#logo{
+margin-left: 80px;
+    width: 100px;
+    height: 30px;
+}
+.container{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.mb-3{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    font-family: "Inter", sans-serif;
+    color: #A9A6AA !important;
+   
+}
+.form-control{
+    color: white !important;
+    background: #29282D !important;
+    border: solid #29282D !important;
+    width: 100% !important;
+
+}
+.form-control:hover{
+    background:#302f35 !important;
+}
+#texto2{
+
+    margin-left: 150px;
+}
+#texto2:hover{
+    color: blue;
+}
+.btn-primary{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: #A238FF !important;
+    border-color: #A238FF !important;
+    width: 32%;
+    margin-right: 90px;
+    
+}
+#contenedor3{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
