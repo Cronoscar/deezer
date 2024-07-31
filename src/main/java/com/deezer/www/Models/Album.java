@@ -20,6 +20,6 @@ public class Album {
     private String nombre_album;
     @Column(name = "cantidad_canciones")
     private int cantidad_canciones;
-    @Column(name = "portada")
+    @Column(name = "portada")//cambiar el tipo en el modelo relacional de sql developer
     private String portada;
 }
