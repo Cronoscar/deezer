@@ -9,7 +9,7 @@ import lombok.Data;
 import jakarta.persistence.GenerationType;
 
 @Entity
-@Table(name = "albumes")
+@Table(name = "tbl_albumes")
 @Data
 public class Album {
     @Id

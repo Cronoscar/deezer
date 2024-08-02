@@ -11,7 +11,7 @@ import lombok.Data;
 import jakarta.persistence.GenerationType;
 
 @Entity
-@Table(name = "artistas")
+@Table(name = "tbl_artistas")
 @Data
 public class Artista {
     @Id

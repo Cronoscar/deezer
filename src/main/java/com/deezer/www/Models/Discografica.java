@@ -10,7 +10,7 @@ import jakarta.persistence.GenerationType;
 import java.util.Date;
 
 @Entity
-@Table(name = "discograficas")
+@Table(name = "tbl_discograficas")
 @Data
 public class Discografica {
     @Id
