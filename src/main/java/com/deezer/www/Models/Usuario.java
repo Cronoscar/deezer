@@ -15,6 +15,7 @@ import lombok.Data;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 @Table(name = "tbl_usuarios")
@@ -38,11 +39,29 @@ public class Usuario {
     private String usuario;
     @Column(name = "correo")
     private String correo;
-    @OneToMany(mappedBy = "usuario")
+   /* @OneToMany(mappedBy = "usuario")
     @JsonManagedReference
-    private List<Contrato_x_usuario> contratos;
+    private List<Contrato_x_usuario> contratos; */
     @ManyToOne
     @JoinColumn(name = "codigo_tipo_usuario",referencedColumnName = "codigo_tipo")
     @JsonManagedReference
     private Tipo_usuario tipo_usuario;
+    @ManyToOne
+    @JoinColumn(name = "codigo_genero",referencedColumnName = "codigo_genero")
+    @JsonManagedReference
+    private Genero_Persona genero;
+    @OneToMany(mappedBy = "emisor")
+    @JsonBackReference
+    private List<Mensaje> menajesemisor;
+    @OneToMany(mappedBy = "receptor")
+    @JsonBackReference
+    private List<Mensaje> menajesreceptor;
+    @ManyToOne
+    @JoinColumn(name = "codigo_contrato",referencedColumnName = "codigo_contrato")
+    @JsonBackReference
+    private Contrato_x_usuario contratos_x_usuario;
+
+    /* reformular el modelo relacional, un usuario solo puede estar sucrito a un plan a la vez por lo cual se
+     * debe modificar la relaciones referentes a los contratos y los usuarios  
+     */
     }
