@@ -25,4 +25,7 @@ public class Genero_Persona {
     @OneToMany(mappedBy = "genero")
     @JsonManagedReference("genero_reference")
     private List<Usuario> usuarios;
+    @OneToMany(mappedBy = "genero_Persona_Artista")
+    @JsonManagedReference("genero_persona_artistas")
+    private List<Artista> artistas;
 }

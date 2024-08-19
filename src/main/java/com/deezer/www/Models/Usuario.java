@@ -39,6 +39,8 @@ public class Usuario {
     private String usuario;
     @Column(name = "correo")
     private String correo;
+    @Column(name = "contrasena")
+    private String contrasena;
     @ManyToOne
     @JoinColumn(name = "codigo_tipo_usuario",referencedColumnName = "codigo_tipo_usuario")
     @JsonBackReference ("tipousuarioreference")
@@ -60,4 +62,10 @@ public class Usuario {
     @JoinColumn(name =  "codigo_plan",referencedColumnName = "codigo_plan")
     @JsonBackReference ("plan_reference")
     private Plan plan;
+    @OneToMany(mappedBy = "Usuario")
+    @JsonIgnore
+    private List<Usuario_x_Playlist> usuarios_x_Playlist;
+    @OneToMany(mappedBy = "usuario")
+    @JsonIgnore
+    private List<Favorito> favoritos;
     }
