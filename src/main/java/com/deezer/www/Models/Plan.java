@@ -31,13 +31,13 @@ public class Plan {
     private int precio;
     @ManyToOne
     @JoinColumn(name = "codigo_periodo",referencedColumnName = "codigo_periodo")
-    @JsonManagedReference
+    @JsonBackReference("periodo_reference")
     private Periodo periodo;
     @ManyToOne 
     @JoinColumn(name = "codigo_sucripcion",referencedColumnName = "codigo_sucripcion")
-    @JsonManagedReference
+    @JsonBackReference ("sucripcion_reference")
     private Sucripcion sucripcion;
     @OneToMany(mappedBy = "plan")
-    @JsonBackReference
+    @JsonManagedReference("plan_reference")
     private List<Usuario> usuario;
 }

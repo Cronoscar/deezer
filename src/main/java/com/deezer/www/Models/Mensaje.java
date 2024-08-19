@@ -2,6 +2,7 @@ package com.deezer.www.Models;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
@@ -27,11 +28,11 @@ public class Mensaje {
     @Column(name = "contenido")
     private String contenido;
     @ManyToOne
-    @JsonManagedReference
+    @JsonBackReference("emisor_reference")
     @JoinColumn(name = "codigo_usuario_emisor",referencedColumnName = "codigo_usuario")
     private Usuario emisor;
     @ManyToOne
-    @JsonManagedReference
+    @JsonBackReference("receptor_reference")
     @JoinColumn(name = "codigo_receptor",referencedColumnName = "codigo_usuario")
     private Usuario receptor;     
 }

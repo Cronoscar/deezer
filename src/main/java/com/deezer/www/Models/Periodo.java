@@ -24,7 +24,7 @@ public class Periodo {
     @Column(name = "tipo_periodo")
     private String tipo_periodo;//cambiar el tipo de dato en el modelo relacional 
     @OneToMany(mappedBy = "periodo")
-    @JsonBackReference
+    //@JsonBackReference("periodo_reference")
     private List<Plan> planes;
     
 

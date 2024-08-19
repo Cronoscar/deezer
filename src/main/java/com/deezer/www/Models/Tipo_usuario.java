@@ -26,6 +26,6 @@ public class Tipo_usuario {
     private String tipo_usuario;
     
     @OneToMany(mappedBy = "tipo_usuario")
-    @JsonBackReference
+    @JsonManagedReference("tipousuarioreference")
     private List<Usuario> usuarios;
 }

@@ -16,5 +16,24 @@ public class usuarioServiceimpl implements usuarioService {
     public List<Usuario> obtenertodosUsuarios() {
         return this.usuarioRepository.findAll();    
     }
+    @Override
+    public String nuevoUsuario(Usuario nuevUsuario) {
+    if(this.usuarioRepository.existsById(nuevUsuario.getCodigo_usuario())){
+
+        return "Usuario ya existe";
+    } else 
+    {
+        this.usuarioRepository.save(nuevUsuario);    
+        return "se agrego "+" " + nuevUsuario.getNombre() +" " +"de manera correcta";
+    }
+    }
+    @Override
+    public Usuario obtenerUsuarioporID(int codigo_usuario) {
+        if(this.usuarioRepository.existsById(codigo_usuario)){
+            return this.usuarioRepository.findById(codigo_usuario).get();
+        }else{
+            return null;
+        }
+    }
     
 }

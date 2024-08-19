@@ -3,6 +3,7 @@ package com.deezer.www.Models;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,6 +25,6 @@ public class Sucripcion {
     @Column(name = "tipo_sucripcion")
     private String tipo_suscripcion;
     @OneToMany(mappedBy = "sucripcion")
-    @JsonBackReference
+    @JsonManagedReference("sucripcion_reference")
     private List<Plan> planes;
 }

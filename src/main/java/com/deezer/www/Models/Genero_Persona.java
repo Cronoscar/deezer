@@ -1,6 +1,7 @@
 package com.deezer.www.Models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
@@ -22,6 +23,6 @@ public class Genero_Persona {
     @Column(name = "tipo_genero")
     private String tipo_genero;
     @OneToMany(mappedBy = "genero")
-    @JsonBackReference
+    @JsonManagedReference("genero_reference")
     private List<Usuario> usuarios;
 }

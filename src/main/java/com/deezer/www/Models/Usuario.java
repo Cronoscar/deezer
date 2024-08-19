@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Data
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   // @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo_usuario")
     private int codigo_usuario;
     @Column(name = "nombre")
@@ -39,26 +39,25 @@ public class Usuario {
     private String usuario;
     @Column(name = "correo")
     private String correo;
-   /* @OneToMany(mappedBy = "usuario")
-    @JsonManagedReference
-    private List<Contrato_x_usuario> contratos; */
     @ManyToOne
     @JoinColumn(name = "codigo_tipo_usuario",referencedColumnName = "codigo_tipo_usuario")
-    @JsonManagedReference
+    @JsonBackReference ("tipousuarioreference")
     private Tipo_usuario tipo_usuario;
     @ManyToOne
     @JoinColumn(name = "codigo_genero_persona",referencedColumnName = "codigo_genero_persona")
-    @JsonManagedReference
+    @JsonBackReference("genero_reference")
     private Genero_Persona genero;
     @OneToMany(mappedBy = "emisor")
-    @JsonBackReference
+    @JsonManagedReference("emisor_reference")
+    @JsonIgnore
     private List<Mensaje> menajesemisor;
     @OneToMany(mappedBy = "receptor")
-    @JsonBackReference
+    @JsonManagedReference("receptor_reference")
+    @JsonIgnore
     private List<Mensaje> menajesreceptor;
     
     @ManyToOne
     @JoinColumn(name =  "codigo_plan",referencedColumnName = "codigo_plan")
-    @JsonManagedReference
+    @JsonBackReference ("plan_reference")
     private Plan plan;
     }
