@@ -19,8 +19,8 @@ public class usuarioServiceimpl implements usuarioService {
     @Override
     public String nuevoUsuario(Usuario nuevUsuario) {
     if(this.usuarioRepository.existsById(nuevUsuario.getCodigo_usuario())){
-
-        return "Usuario ya existe";
+        
+        return "Usuario ya existe" ;
     } else 
     {
         this.usuarioRepository.save(nuevUsuario);    

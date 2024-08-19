@@ -68,4 +68,10 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario")
     @JsonIgnore
     private List<Favorito> favoritos;
+    @OneToMany(mappedBy = "usuario")
+    @JsonIgnore
+    private List<Preferencia_Musical> preferencia_Musicales;
+    @OneToMany(mappedBy = "usuario")
+    @JsonIgnore
+    private List<Historial_Reproduccion> historial_Reproducciones;
     }

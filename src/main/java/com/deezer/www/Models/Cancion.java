@@ -51,4 +51,10 @@ public class Cancion {
     @OneToMany(mappedBy = "cancion")
     @JsonIgnore
     private List<Favorito> favoritos;
+    @OneToMany(mappedBy = "cancion")
+    @JsonIgnore
+    private List<Historial_Reproduccion> historial_Reproducciones;
+    @OneToMany(mappedBy = "cancion")
+    @JsonIgnore
+    private List<Cancion_X_Artista> cancion_X_Artistas;
 }

@@ -2,6 +2,7 @@ package com.deezer.www.Models;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
@@ -26,5 +27,8 @@ public class Genero_Musical {
     @OneToMany(mappedBy = "genero_Musical")
     @JsonManagedReference("genero_musical_cancion")
     private List<Cancion> canciones;
+    @OneToMany(mappedBy = "genero_musical")
+    @JsonIgnore
+    private List<Preferencia_Musical> hPreferencia_Musicales;
     
 }
