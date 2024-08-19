@@ -15,12 +15,12 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "tbl_tipo_usuario")
+@Table(name = "tbl_tipo_usuarios")
 @Data
 public class Tipo_usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "codigo_tipo")
+    @Column(name = "codigo_tipo_usuario")
     private int codigo_tipo_usuario;
     @Column(name = "tipo_usuario")
     private String tipo_usuario;

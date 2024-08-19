@@ -43,11 +43,11 @@ public class Usuario {
     @JsonManagedReference
     private List<Contrato_x_usuario> contratos; */
     @ManyToOne
-    @JoinColumn(name = "codigo_tipo_usuario",referencedColumnName = "codigo_tipo")
+    @JoinColumn(name = "codigo_tipo_usuario",referencedColumnName = "codigo_tipo_usuario")
     @JsonManagedReference
     private Tipo_usuario tipo_usuario;
     @ManyToOne
-    @JoinColumn(name = "codigo_genero",referencedColumnName = "codigo_genero")
+    @JoinColumn(name = "codigo_genero_persona",referencedColumnName = "codigo_genero_persona")
     @JsonManagedReference
     private Genero_Persona genero;
     @OneToMany(mappedBy = "emisor")
@@ -56,12 +56,9 @@ public class Usuario {
     @OneToMany(mappedBy = "receptor")
     @JsonBackReference
     private List<Mensaje> menajesreceptor;
+    
     @ManyToOne
-    @JoinColumn(name = "codigo_contrato",referencedColumnName = "codigo_contrato")
-    @JsonBackReference
-    private Contrato_x_usuario contratos_x_usuario;
-
-    /* reformular el modelo relacional, un usuario solo puede estar sucrito a un plan a la vez por lo cual se
-     * debe modificar la relaciones referentes a los contratos y los usuarios  
-     */
+    @JoinColumn(name =  "codigo_plan",referencedColumnName = "codigo_plan")
+    @JsonManagedReference
+    private Plan plan;
     }
