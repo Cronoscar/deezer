@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Favoritos</title>
-        <link rel="stylesheet" href="Favoritos.css">
+        <link rel="stylesheet" href="Explorar.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link href="https://db.onlinewebfonts.com/c/2170a4d71c4da1e4af6ac9f1dd8df365?family=Syntax+Next+LT+W04+Black" rel="stylesheet">
     </head>
@@ -17,14 +17,14 @@
                         </a>
                     </li>
                     <li>
-                        <button class="custom-button">
+                        <a href="Explorar.html" class="custom-button">
                             <i class="fa-regular fa-compass"></i> Explorar
-                        </button>
+                        </a>
                     </li>
                     <li>
-                        <button class="custom-button">
+                        <a href="Favoritos.html" class="custom-button">
                             <i class="fa-solid fa-heart"></i> Favoritos
-                        </button>
+                        </a>
                     </li>
                 </ul>
                 <p>
@@ -42,13 +42,13 @@
                     <ul>
                         <li>
                             <button>
-                                <img src="src/img/corazon.jpg" alt="Heart Icon">
+                                <img src="src/img/love.jpg" alt="Heart Icon">
                                 <p>Canciones favoritas</p>
                             </button>
                         </li>
                         <li>
                             <button>
-                                <img src="src/img/corazon.jpg" alt="Heart Icon">
+                                <img src="src/img/love.jpg" alt="Heart Icon">
                                 <p>Loved Tracks</p>
                             </button>
                         </li>
@@ -69,105 +69,186 @@
                 <li><button class="menu-button">Historial</button></li>
             </ul>
             <h2>Escuchado recientemente</h2>
+                <div class="cards">
+                    <div class="card">
+                        <img src="src/img/too leng.jpg" alt="viral rewind">
+                        <div class="card-buttons">
+                            <button><i class="fas fa-play"></i></button>
+                            <button><i class="fas fa-heart"></i></button>
+                            <button><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="viral rewind">Too leng</a></div>
+                        <div class="heading-5-sub">21 Savage</div>
+                    </div>
+                    <div class="card">
+                        <img src="src/img/hn.jpg" alt="Vibe Check">
+                        <div class="card-buttons">
+                            <button><i class="fas fa-play"></i></button>
+                            <button><i class="fas fa-heart"></i></button>
+                            <button><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="vibe check">Selección Editorial HN</a></div>
+                        <div class="heading-5-sub">Pública</div>
+                    </div>
+                    <div class="card">
+                        <img src="src/img/love.jpg" alt="Good Stuff">
+                        <div class="card-buttons">
+                            <button><i class="fas fa-play"></i></button>
+                            <button><i class="fas fa-heart"></i></button>
+                            <button><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="good stuff">Canciones favoritas</a></div>
+                        <div class="heading-5-sub">Pública</div>
+                    </div>
+                </div>
+                <h2>Artistas <button>Ver todo</button></h2>
+                <div class="cards">
+                    <a href="Artistas.html" class="card-link">
+                    <div class="card">
+                        <img class="circular-image" src="src/img/metro.jpg" alt="Vibe Check">
+                        <div class="card-buttons">
+                            <button><i class="fas fa-play"></i></button>
+                            <button><i class="fas fa-heart"></i></button>
+                            <button><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="vibe check">Metro Boomin</a></div>
+                        <div class="heading-5-sub">547,950 seguidores</div>
+                    </div>
+                </a>
+                    <div class="card">
+                        <img class="circular-image" src="src/img/eminem.jpg" alt="Good Stuff">
+                        <div class="card-buttons">
+                            <button><i class="fas fa-play"></i></button>
+                            <button><i class="fas fa-heart"></i></button>
+                            <button><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="good stuff">Eminem</a></div>
+                        <div class="heading-5-sub">17,464,780 seguidores</div>
+                    </div>
+                    <div class="card">
+                        <img class="circular-image" src="src/img/empire.jpg" alt="Vibe Check">
+                        <div class="card-buttons">
+                            <button><i class="fas fa-play"></i></button>
+                            <button><i class="fas fa-heart"></i></button>
+                            <button><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="vibe check">Empire Of The Sun</a></div>
+                        <div class="heading-5-sub">381,864 seguidores</div>
+                    </div>
+                    <div class="card">
+                        <img class="circular-image" src="src/img/empire.jpg" alt="Good Stuff">
+                        <div class="card-buttons">
+                            <button><i class="fas fa-play"></i></button>
+                            <button><i class="fas fa-heart"></i></button>
+                            <button><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="good stuff">Canciones favoritas</a></div>
+                        <div class="heading-5-sub">Pública</div>
+                    </div>
             <div class="song-card">
             </div>
         </main>
-        <footer>
-            <div class="music-player">
-                <div class="song-element">
-                </div>
-                <div class="song-controls">
-                    <i class="fas fa-heart"></i>
-                    <i class="fas fa-plus"></i>
-                    <i class="fas fa-random"></i>
-                    <i class="fas fa-step-backward"></i>
-                    <i class="fas fa-play"></i>
-                    <i class="fas fa-step-forward"></i>
-                    <i class="fas fa-repeat"></i>
-                </div>
-                
-                <div class="progress-bar">
-                    <span class="current-time"></span>
-                    <div class="progress"></div>
-                    <span class="total-time"></span>
-                </div>
+        <div class="music-player">
+            <div class="song-controls">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-plus"></i>
+                <i class="fas fa-random"></i>
+                <i class="fas fa-step-backward backward-button"></i>
+                <i class="fas fa-play play-button"></i>
+                <i class="fas fa-step-forward forward-button"></i>
+                <i class="fas fa-repeat"></i>
             </div>
-        </footer>
-    </div>
-    <script>
-
-        let audio = new Audio('');
-
-
-let playButton = document.querySelector('.fa-play');
-let forwardButton = document.querySelector('.fa-step-forward');
-let backwardButton = document.querySelector('.fa-step-backward');
-let progressBar = document.querySelector('.progress');
-
-
-playButton.addEventListener('click', function() {
-    if (audio.paused) {
-        audio.play();
-        playButton.classList.remove('fa-play');
-        playButton.classList.add('fa-pause');
-    } else {
-        audio.pause();
-        playButton.classList.remove('fa-pause');
-        playButton.classList.add('fa-play');
-    }
-});
-
-forwardButton.addEventListener('click', function() {
-    audio.currentTime += 10;
-});
-
-
-backwardButton.addEventListener('click', function() {
-    audio.currentTime -= 10;
-});
-
-
-audio.addEventListener('timeupdate', function() {
-    let progress = audio.currentTime / audio.duration;
-    progressBar.style.width = progress * 100 + '%';
-});
+            <div class="progress-bar">
+                <span class="current-time">00:00</span>
+                <div class="progress-container">
+                    <div class="progress"></div>
+                </div>
+                <span class="total-time">00:00</span>
+            </div>
+            <audio id="audio-player" src="src/canciones/Like that.mp3"></audio>
+            <div class="extra-controls">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-volume-up"></i>
+                <i class="fas fa-stream"></i>
+            </div>
+        </div>
         
-        let input = document.querySelector('input[type="text"]');
-
-input.addEventListener('focus', function() {
-    this.style.backgroundColor = '#EBE7EE';
-}, false);
-
-input.addEventListener('blur', function() {
-    if (this.value.length === 0) {
-        this.style.backgroundColor = 'transparent';
-    }
-}, false);
-
-let menuButtons = document.querySelectorAll('.menu-button');
-
-menuButtons.forEach(button => {
-    button.addEventListener('click', function() {
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const audioPlayer = document.getElementById('audio-player');
+                const playButton = document.querySelector('.play-button');
+                const forwardButton = document.querySelector('.forward-button');
+                const backwardButton = document.querySelector('.backward-button');
+                const progressBar = document.querySelector('.progress');
+                const currentTimeElement = document.querySelector('.current-time');
+                const totalTimeElement = document.querySelector('.total-time');
         
-        menuButtons.forEach(btn => btn.classList.remove('selected'));
-
-       
-        this.classList.add('selected');
-    });
-});
-
-let customButtons = document.querySelectorAll('.custom-button');
-
-customButtons.forEach(button => {
-    button.addEventListener('click', function() {
-       
-        customButtons.forEach(btn => btn.classList.remove('selected'));
-
+                playButton.addEventListener('click', function() {
+                    if (audioPlayer.paused) {
+                        audioPlayer.play();
+                        playButton.classList.remove('fa-play');
+                        playButton.classList.add('fa-pause');
+                    } else {
+                        audioPlayer.pause();
+                        playButton.classList.remove('fa-pause');
+                        playButton.classList.add('fa-play');
+                    }
+                });
         
-        this.classList.add('selected');
-    });
-});
+                forwardButton.addEventListener('click', function() {
+                    audioPlayer.currentTime += 10;
+                });
         
-    </script>
-</body>
-</html>
+                backwardButton.addEventListener('click', function() {
+                    audioPlayer.currentTime -= 10;
+                });
+        
+                audioPlayer.addEventListener('timeupdate', function() {
+                    const currentTime = audioPlayer.currentTime;
+                    const duration = audioPlayer.duration;
+                    const progressPercent = (currentTime / duration) * 100;
+                    progressBar.style.width = progressPercent + '%';
+        
+                    currentTimeElement.textContent = formatTime(currentTime);
+                    totalTimeElement.textContent = formatTime(duration);
+                });
+        
+                function formatTime(seconds) {
+                    const minutes = Math.floor(seconds / 60);
+                    const secs = Math.floor(seconds % 60);
+                    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+                }
+        
+                let input = document.querySelector('input[type="text"]');
+        
+                input.addEventListener('focus', function() {
+                    this.style.backgroundColor = '#EBE7EE';
+                }, false);
+        
+                input.addEventListener('blur', function() {
+                    if (this.value.length === 0) {
+                        this.style.backgroundColor = 'transparent';
+                    }
+                }, false);
+        
+                let menuButtons = document.querySelectorAll('.menu-button');
+        
+                menuButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        menuButtons.forEach(btn => btn.classList.remove('selected'));
+                        this.classList.add('selected');
+                    });
+                });
+        
+                let customButtons = document.querySelectorAll('.custom-button');
+        
+                customButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        customButtons.forEach(btn => btn.classList.remove('selected'));
+                        this.classList.add('selected');
+                    });
+                });
+            });
+        </script>
+        </body>
+        </html>

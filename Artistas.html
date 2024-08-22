@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Artistas</title>
+        <link rel="stylesheet" href="Explorar.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://db.onlinewebfonts.com/c/2170a4d71c4da1e4af6ac9f1dd8df365?family=Syntax+Next+LT+W04+Black" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <h1>Deezer</h1>
+                <ul>
+                    <li>
+                        <a href="index.html" class="custom-button">
+                            <i class="fas fa-home"></i> Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Explorar.html" class="custom-button">
+                            <i class="fa-regular fa-compass"></i> Explorar
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Favoritos.html" class="custom-button">
+                            <i class="fa-solid fa-heart"></i> Favoritos
+                        </a>
+                    </li>
+                </ul>
+                <p>
+                    Estás en Deezer Free, actualiza para eliminar anuncios.
+                    <br>                    
+                    <button>Suscribirse</button>
+                </p>
+                <div class="playlists">
+                    <div class="header">
+                        <h2>Playlists</h2> 
+                        <button>
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <ul>
+                        <li>
+                            <button>
+                                <img src="src/img/love.jpg" alt="Heart Icon">
+                                <p>Canciones favoritas</p>
+                            </button>
+                        </li>
+                        <li>
+                            <button>
+                                <img src="src/img/love.jpg" alt="Heart Icon">
+                                <p>Loved Tracks</p>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main>
+            
+            <input type="text" placeholder="Artistas, canciones, podcasts...">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="src/img/metro.jpg" alt="Metro Boomin">
+                </div>
+                <div class="profile-info">
+                    <h1>Metro Boomin</h1>
+                    <p>547,948 seguidores</p>
+                </div>
+                <div class="profile-actions">
+                    <button class="mix-button">Mix</button>
+                    <button class="favorite-button">❤</button>
+                    <button class="more-button">...</button>
+                </div>
+            </div>
+            <ul>
+                <li><button class="menu-button">Discografía</button></li>
+                <li><button class="menu-button">Canciones top</button></li>
+                <li><button class="menu-button">Artistas similares</button></li>
+                <li><button class="menu-button">Playlists</button></li>
+                <li><button class="menu-button">Conciertos</button></li>
+                <li><button class="menu-button">Biografía</button></li>
+            </ul>
+            <div class="top-songs-container">
+                <div class="header">
+                    <h2>Canciones top</h2>
+                    <button class="view-all-button">Ver todo</button>
+                </div>
+                <div class="song-list">
+                    <div class="song-item">
+                        <div class="song-info">
+                            <div class="song-image">
+                                <img src="src/img/heroes.jpg" alt="Creepin'">
+                            </div>
+                            <div class="song-details">
+                                <span class="song-rank">1.</span>
+                                <span class="song-title">Creepin'</span>
+                                <span class="song-explicit">E</span>
+                            </div>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-button" data-song="src/canciones/creepin.mp3">▶</button>
+                            <button class="favorite-button">❤</button>
+                            <button class="more-button">...</button>
+                        </div>
+                    </div>
+                    <div class="song-item">
+                        <div class="song-info">
+                            <div class="song-image">
+                                <img src="src/img/we.jpg" alt="Type Shit">
+                            </div>
+                            <div class="song-details">
+                                <span class="song-rank">2.</span>
+                                <span class="song-title">Type Shit</span>
+                                <span class="song-explicit">E</span>
+                            </div>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-button" data-song="src/canciones/type.mp3">▶</button>
+                            <button class="favorite-button">❤</button>
+                            <button class="more-button">...</button>
+                        </div>
+                    </div>
+                    <div class="song-item highlighted">
+                        <div class="song-info">
+                            <div class="song-image">
+                                <img src="src/img/we.jpg" alt="Like That">
+                            </div>
+                            <div class="song-details">
+                                <span class="song-rank">3.</span>
+                                <span class="song-title">Like That</span>
+                                <span class="song-explicit">E</span>
+                            </div>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-button" data-song="src/canciones/Like that.mp3">▶</button>
+                            <button class="favorite-button active">❤</button>
+                            <button class="more-button">...</button>
+                        </div>
+                    </div>
+                    <div class="song-item">
+                        <div class="song-info">
+                            <div class="song-image">
+                                <img src="src/img/heroes.jpg" alt="Trance">
+                            </div>
+                            <div class="song-details">
+                                <span class="song-rank">4.</span>
+                                <span class="song-title">Trance</span>
+                                <span class="song-explicit">E</span>
+                            </div>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-button" data-song="src/canciones/trance.mp3">▶</button>
+                            <button class="favorite-button">❤</button>
+                            <button class="more-button">...</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="destacados">
+                <h2>Albumes</h2>
+                <div class="cards">
+                    <div class="card">
+                        <img src="src/img/westill.jpg" alt="viral rewind">
+                        <div class="card-buttons">
+                            <button><i class="fas fa-play"></i></button>
+                            <button><i class="fas fa-heart"></i></button>
+                            <button><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="viral rewind">WE STILL DON´T TRUST YOU</a></div>
+                        <div class="heading-5-sub">Future, Metro Boomin</div>
+                    </div>
+                    <div class="card">
+                        <img src="src/img/wedont.jpg" alt="Vibe Check">
+                        <div class="card-buttons">
+                            <button><i class="fas fa-play"></i></button>
+                            <button><i class="fas fa-heart"></i></button>
+                            <button><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="vibe check">WE DON´T TRUST YOU</a></div>
+                        <div class="heading-5-sub">Future, Metro Boomin</div>
+                    </div>
+                    <div class="card">
+                        <img src="src/img/spider.jpg" alt="Good Stuff">
+                        <div class="card-buttons">
+                            <button><i class="fas fa-play"></i></button>
+                            <button><i class="fas fa-heart"></i></button>
+                            <button><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="good stuff">Spider-Man:ACROSS THE SPIDER-VERSE</a></div>
+                        <div class="heading-5-sub">Metro Boomin</div>
+                    </div>
+                    <div class="card">
+                        <img src="src/img/heroe.jpg" alt="Lucky Girl Syndrome">
+                        <div class="card-buttons">
+                            <button><i class="fas fa-play"></i></button>
+                            <button><i class="fas fa-heart"></i></button>
+                            <button><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="lucky girl syndrome">HEROES & VILLAINS</a></div>
+                        <div class="heading-5-sub">Metro Boomin</div>
+                    </div>
+                </div>
+        </main>
+        <div class="music-player">
+            <div class="song-controls">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-plus"></i>
+                <i class="fas fa-random"></i>
+                <i class="fas fa-step-backward backward-button"></i>
+                <i class="fas fa-play play-button"></i>
+                <i class="fas fa-step-forward forward-button"></i>
+                <i class="fas fa-repeat"></i>
+            </div>
+            <div class="progress-bar">
+                <span class="current-time">00:00</span>
+                <div class="progress-container">
+                    <div class="progress"></div>
+                </div>
+                <span class="total-time">00:00</span>
+            </div>
+            <audio id="audio-player" src="src/canciones/Like that.mp3"></audio>
+            <div class="extra-controls">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-volume-up"></i>
+                <i class="fas fa-stream"></i>
+            </div>
+        </div>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const audioPlayer = document.getElementById('audio-player');
+                const playButton = document.querySelector('.play-button');
+                const forwardButton = document.querySelector('.forward-button');
+                const backwardButton = document.querySelector('.backward-button');
+                const progressBar = document.querySelector('.progress');
+                const currentTimeElement = document.querySelector('.current-time');
+                const totalTimeElement = document.querySelector('.total-time');
+        
+                playButton.addEventListener('click', function() {
+                    if (audioPlayer.paused) {
+                        audioPlayer.play();
+                        playButton.classList.remove('fa-play');
+                        playButton.classList.add('fa-pause');
+                    } else {
+                        audioPlayer.pause();
+                        playButton.classList.remove('fa-pause');
+                        playButton.classList.add('fa-play');
+                    }
+                });
+        
+                forwardButton.addEventListener('click', function() {
+                    audioPlayer.currentTime += 10;
+                });
+        
+                backwardButton.addEventListener('click', function() {
+                    audioPlayer.currentTime -= 10;
+                });
+        
+                audioPlayer.addEventListener('timeupdate', function() {
+                    const currentTime = audioPlayer.currentTime;
+                    const duration = audioPlayer.duration;
+                    const progressPercent = (currentTime / duration) * 100;
+                    progressBar.style.width = progressPercent + '%';
+        
+                    currentTimeElement.textContent = formatTime(currentTime);
+                    totalTimeElement.textContent = formatTime(duration);
+                });
+        
+                function formatTime(seconds) {
+                    const minutes = Math.floor(seconds / 60);
+                    const secs = Math.floor(seconds % 60);
+                    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+                }
+        
+                let input = document.querySelector('input[type="text"]');
+        
+                input.addEventListener('focus', function() {
+                    this.style.backgroundColor = '#EBE7EE';
+                }, false);
+        
+                input.addEventListener('blur', function() {
+                    if (this.value.length === 0) {
+                        this.style.backgroundColor = 'transparent';
+                    }
+                }, false);
+        
+                let menuButtons = document.querySelectorAll('.menu-button');
+        
+                menuButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        menuButtons.forEach(btn => btn.classList.remove('selected'));
+                        this.classList.add('selected');
+                    });
+                });
+        
+                let customButtons = document.querySelectorAll('.custom-button');
+        
+                customButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        customButtons.forEach(btn => btn.classList.remove('selected'));
+                        this.classList.add('selected');
+                    });
+                });
+            });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const audioPlayer = document.getElementById('audio-player');
+                const playButtons = document.querySelectorAll('.play-button');
+            
+                playButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const song = this.getAttribute('data-song');
+                        audioPlayer.src = song;
+                        audioPlayer.play();
+                    });
+                });
+            });
+            
+        </script>
+        </body>
+        </html>

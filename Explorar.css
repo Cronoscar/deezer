@@ -1,0 +1,684 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.explorar {
+    text-align: center;
+    padding: 20px;
+}
+
+.explorar h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    display: inline-block;
+    width: 200px; /* Ajusta el tamaño según sea necesario */
+    margin: 10px;
+    border-radius: 15px; /* Hace los bordes ovalados */
+    overflow: hidden; /* Asegura que el contenido no se desborde fuera de los bordes redondeados */
+    border: none; /* Elimina el borde del botón */
+    padding: 0; /* Elimina el padding del botón */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que es un botón */
+    background: none; /* Elimina el fondo del botón */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card p {
+    position: absolute;
+    bottom: 10px; /* Ajusta la distancia desde la parte inferior */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white; /* Cambia el color del texto según sea necesario */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    width: 90%; /* Ajusta el ancho según sea necesario */
+    font-weight: bold; /* Hace el texto en negrita */
+    font-size: 18px;
+}
+
+.card:hover {
+    opacity: 0.7; /* Hace que la card se vuelva opaca al pasar el cursor */
+}
+
+
+
+nav {
+    position: fixed; /* Fija el nav en su posición */
+    top: 0;
+    left: 0;
+    width: 250px; /* Ajusta el ancho según sea necesario */
+    height: 100%; /* Ocupa toda la altura de la ventana */
+    background-color: #f8f8f8; /* Color de fondo del nav */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Sombra para el nav */
+    overflow-y: auto; /* Permite el desplazamiento dentro del nav si es necesario */
+}
+
+
+nav h1 {
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li button {
+    width: 100%;
+    display: block;
+}
+
+
+main {
+    margin-left: 270px; /* Ajusta el margen izquierdo para que no se superponga con el nav */
+    padding: 20px;
+}
+
+main h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+main p {
+    color: #888;
+    margin-bottom: 20px;
+}
+
+main ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+main ul li {
+    margin-right: 20px;
+}
+
+footer {
+    position: fixed; /* Fija el footer en su posición */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+    background-color: #f8f8f8; /* Color de fondo del footer */
+    padding: 10px 20px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Sombra para el footer */
+    z-index: 1000; /* Asegura que el footer esté por encima de otros elementos */
+}
+
+
+.playlists {
+    padding: 20px;
+}
+
+.playlists h2 {
+    color: #000000;
+}
+
+.playlists ul {
+    list-style: none;
+    padding: 0;
+}
+
+.playlists ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.playlists ul li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.playlists button {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playlists button img {
+    width: 20px;
+    height: 20px;
+}
+
+.container > nav {
+    background-color: #F5F2F8;
+}
+
+.container > nav > p {
+    background-color: #A238FF;
+    padding: 10px;
+    color: white;
+    font-family: 'Orev Edge Extra Bold', sans-serif;
+}
+
+nav > p {
+    background-color: #A238FF;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+}
+
+nav > p > button {
+    background-color: #8131C9;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #FDFCFE;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+nav > p > button:hover {
+    background-color: #5a1a8e;
+}
+
+.playlists ul li img {
+    width: 50px;
+    height: 50px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.playlists .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playlists .header > h2 {
+    margin-right: 10px;
+}
+
+.playlists .header > button {
+    cursor: pointer;
+}
+
+.custom-button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+h1 {
+    font-family: 'arial black', sans-serif;
+    font-size: 36px;
+}
+
+h3 {
+    font-family: 'arial black', sans-serif;
+    font-size: 50px;
+}
+
+input[type="text"] {
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.menu-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.menu-button:hover {
+    color: black;
+}
+
+.menu-button::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: gray;
+    transition: width .3s;
+}
+
+.menu-button:hover::after {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.menu-button.selected {
+    font-weight: bold;
+    color: black;
+}
+
+.menu-button.selected::after {
+    width: 100%;
+    background: purple;
+}
+
+.custom-button.selected {
+    color: purple;
+}
+
+
+
+:root {
+    --text-color: white;
+}
+
+.destacados .card {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+}
+
+.destacados .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.destacados .card p {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-color);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    width: 90%;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.destacados .card:hover {
+    opacity: 0.7;
+}
+
+.destacados .card .button-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.destacados .card:hover .button-container {
+    opacity: 1;
+}
+
+.destacados .card button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #A238FF;
+    color: white;
+    font-size: 14px;
+}
+.destacados {
+    padding: 20px;
+}
+.destacados h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.destacados button {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.cards {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+.card {
+    width: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+}
+.card img {
+    width: 100%;
+    height: auto;
+}
+.card-info {
+    padding: 10px;
+}
+.card-info h3 {
+    font-size: 18px;
+    margin: 10px 0 5px 0;
+}
+.card-info p {
+    font-size: 14px;
+    color: #666;
+}
+.card-buttons {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    gap: 5px;
+}
+.card:hover .card-buttons {
+    display: flex;
+
+
+}
+.tipos {
+    text-align: center;
+}
+
+.cardst {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cardt {
+    padding: 40px; /* Aumentar el tamaño del botón */
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: bold; /* Texto en negrita */
+    color: white; /* Color del texto blanco */
+    font-size: 18px; /* Aumentar el tamaño del texto */
+}
+
+.cardt:hover {
+    background-color: #e0e0e0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #f8f8f8;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto;
+}
+
+
+.music-player {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 768px;
+    background-color: var(--tempo-colors-background-neutral-secondary-default);
+    bottom: 0px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: var(--tempo-colors-border-neutral-primary-default);
+    height: var(--layout-player-height);
+    left: 0px;
+    padding-inline-start: var(--tempo-space-spacing-l);
+    padding-inline-end: var(--tempo-space-spacing-l);
+    position: fixed;
+    right: 0px;
+}
+
+.song-info {
+    display: flex;
+    align-items: center;
+}
+
+.album-cover {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.song-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.song-title, .artist-name {
+    margin: 0;
+    font-size: 12px;
+}
+
+.song-controls, .extra-controls {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.song-controls i, .extra-controls i {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.progress-container {
+    flex-grow: 1;
+    height: 5px;
+    background-color: #444;
+    margin: 0 10px;
+    position: relative;
+}
+
+.progress {
+    height: 50%;
+    background-color: #1db954;
+    width: 0;
+}
+
+.current-time, .total-time {
+    font-size: 12px;
+}
+
+.circular-image {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: 100px; /* Ajusta el tamaño según sea necesario */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.profile-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info h1 {
+    font-size: 24px;
+    margin: 10px 0 5px 0;
+}
+
+.profile-info p {
+    color: gray;
+    font-size: 14px;
+    margin: 0;
+}
+
+.profile-actions {
+    margin-top: 20px;
+}
+
+.profile-actions button {
+    background-color: #7b4cff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.favorite-button {
+    background-color: transparent;
+    color: black;
+}
+
+.more-button {
+    background-color: transparent;
+    color: black;
+}
+
+
+.top-songs-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    margin: 0;
+}
+
+.view-all-button {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.song-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.song-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.song-item.highlighted {
+    background-color: #f0f0f0;
+}
+
+.song-info {
+    display: flex;
+    align-items: center;
+}
+
+.song-image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.song-details {
+    display: flex;
+    align-items: center;
+}
+
+.song-rank {
+    margin-right: 10px;
+}
+
+.song-title {
+    font-weight: bold;
+}
+
+.song-explicit {
+    background-color: #ccc;
+    color: white;
+    font-size: 12px;
+    padding: 2px 5px;
+    margin-left: 5px;
+    border-radius: 3px;
+}
+
+.song-actions button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.favorite-button.active {
+    color: purple;
+}
+
+.favorite-button,
+.more-button,
+.play-button {
+    color: black;
+}
