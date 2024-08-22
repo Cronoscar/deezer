@@ -88,13 +88,39 @@ var generos =[
     }
 
 ];
+let Todo_Artistas;
+const obtenerAristas = async () => {
+    let url = `http://localhost:8080/Artistas/todos`;
+    try {
+        const resultado = await fetch(url, {
+            method: 'GET', // No se necesita el cuerpo en una solicitud GET
+        });
+
+        // Verificar si la respuesta fue exitosa
+        if (!resultado.ok) {
+            throw new Error('Error en la solicitud: ' + resultado.statusText);
+        }
+
+        const artistas = await resultado.json();
+        Todo_Artistas = artistas;
+        console.log(Todo_Artistas);
+        generarArtistas(); // Llamar a la función para generar los artistas
+
+    } catch (error) {
+        console.error('Hubo un problema al obtener los artistas:', error);
+    }
+};
+
+obtenerAristas();
+
 function generarArtistas(){
-artistas.forEach(artista => {
+    
+    Todo_Artistas.forEach(artista => {
     document.getElementById('artistas').innerHTML+=` <div class="col-2">
     <div class="card" >
-        <img class="card-img-top" src="${artista.urlImagen}" alt="Card image cap"style="border-radius: 100% !important;">
+        <img class="card-img-top" src="${artista.foto_perfil}" alt="Card image cap"style="border-radius: 100% !important;">
         <div class="card-body" >
-          <h5 class="card-title">${artista.nombreArtista}</h5>
+          <h5 class="card-title">${artista.nombre_artistico}</h5>
          
           
         </div>
@@ -111,4 +137,3 @@ function generarGeneros(){
     });
 }
 generarGeneros();
-generarArtistas();
