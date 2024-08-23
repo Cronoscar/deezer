@@ -26,6 +26,7 @@ public class Genero_Musical {
     private String descripcion;
     @OneToMany(mappedBy = "genero_Musical")
     @JsonManagedReference("genero_musical_cancion")
+    @JsonIgnore
     private List<Cancion> canciones;
     @OneToMany(mappedBy = "genero_musical")
     @JsonIgnore

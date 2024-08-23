@@ -17,7 +17,7 @@ import java.util.List;
 @Data
 public class Genero_Persona {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="codigo_genero_persona")
     private int codigo_genero;
     @Column(name = "tipo_genero")
@@ -25,7 +25,7 @@ public class Genero_Persona {
     @OneToMany(mappedBy = "genero")
     @JsonManagedReference("genero_reference")
     private List<Usuario> usuarios;
-    @OneToMany(mappedBy = "genero_Persona_Artista")
+    @OneToMany(mappedBy = "genero_persona_artista")
     @JsonManagedReference("genero_persona_artistas")
     private List<Artista> artistas;
 }

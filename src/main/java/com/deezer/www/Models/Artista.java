@@ -35,7 +35,7 @@ public class Artista {
     private int fans;
     @Column(name="foto_perfil")
     private String foto_perfil;
-    @Column(name = "fecha_de_nacimiento")
+    @Column(name = "fecha_nacimiento")
     private Date fecha_de_nacimiento;
     @Column(name = "fecha_registro")
     private Date fecha_registro;
@@ -50,7 +50,7 @@ public class Artista {
     @ManyToOne 
     @JoinColumn (name = "genero_persona", referencedColumnName = "codigo_genero_persona")
     @JsonBackReference("genero_persona_artistas")
-    private Genero_Persona genero_Persona_Artista;
+    private Genero_Persona genero_persona_artista;
     @ManyToOne
     @JoinColumn(name = "codigo_discografica",referencedColumnName = "codigo_discografica")
     @JsonBackReference("discografica_artista")

@@ -2,6 +2,8 @@ package com.deezer.www.Models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -13,8 +15,8 @@ import java.util.Date;
 @Data
 public class Preferencia_Musical {
     @Id
-    //
-    @Column(name = "codigo_preferencia")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "codigo_preferencia") 
     private int codigo_preferencia;
     @Column(name = "fecha_creacion")
     private Date fecha_creacion;

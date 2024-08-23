@@ -7,4 +7,5 @@ import com.deezer.www.Models.Artista;
 public interface artistaService {
 
     public List<Artista> obtenertodosArtistas();
+    public String crearArtista(Artista nuevoArtista);
 }

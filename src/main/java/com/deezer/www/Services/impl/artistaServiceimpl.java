@@ -20,6 +20,17 @@ public class artistaServiceimpl implements artistaService {
         return this.artistaRepository.findAll();
     }
 
+    @Override
+    public String crearArtista(Artista nuevoArtista) {
+       if (this.artistaRepository.existsById(nuevoArtista.getCodigo_artista())) {
+         return "Artista ya existe";
+       }else{
+        this.artistaRepository.save(nuevoArtista);
+            return "se guardo Artista "+" " +nuevoArtista.getNombre_artistico();
+
+       }
+    }
+
     
     
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.deezer.www.DTO.loginUsuario;
 import com.deezer.www.Models.Usuario;
 import com.deezer.www.Services.impl.usuarioServiceimpl;
 
@@ -35,4 +36,23 @@ public Usuario obtenerUsuario (@PathVariable int id){
 
     return this.usuarioServiceimpl.obtenerUsuarioporID(id);
 }
+@GetMapping("/correo/{correo}")
+public Usuario obtenerUsuarioporcorreo (@PathVariable String correo){
+
+    return this.usuarioServiceimpl.obtenerUsuarioporcorreo(correo);
+
+}
+@GetMapping("/obtener")
+public Usuario obtener (@RequestBody Usuario correo){
+    return this.usuarioServiceimpl.obtenerUsuarioporcorreo(correo.getCorreo());
+}
+
+@PostMapping("/login")
+public Usuario Login (@RequestBody loginUsuario login ){
+
+    return this.usuarioServiceimpl.loginUsuario(login);
+    
+
+}
+
 }

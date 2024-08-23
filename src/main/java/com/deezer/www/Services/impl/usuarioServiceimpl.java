@@ -1,10 +1,11 @@
 package com.deezer.www.Services.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.deezer.www.DTO.loginUsuario;
 import com.deezer.www.Models.Usuario;
 import com.deezer.www.Repositorys.usuarioRepository;
 import com.deezer.www.Services.usuarioService;
@@ -34,6 +35,26 @@ public class usuarioServiceimpl implements usuarioService {
         }else{
             return null;
         }
+    }
+    @Override
+    public Usuario obtenerUsuarioporcorreo(String correo) {
+    
+    return usuarioRepository.findBycorreo(correo)
+            .orElseThrow(() -> new RuntimeException("Usuario no encontrado con el correo: " + correo));    
+    }
+    public Usuario loginUsuario(loginUsuario login){
+        Optional<Usuario> usuarioencontrado = this.usuarioRepository.findBycorreo(login.getCorreo());
+        if (usuarioencontrado.isEmpty()) {
+            
+            throw new Error("Usuario no existe");
+            
+        }
+        if (!usuarioencontrado.get().getContrasena().equals(login.getContrasena())) {
+            throw new Error("contraseña Incorrecta");
+            
+        }
+        
+        return usuarioencontrado.get();
     }
     
 }
