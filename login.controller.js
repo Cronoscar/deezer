@@ -1,3 +1,5 @@
+let User;
+let preferenciasporUsuario=[] 
 const obtenerUsuarios = async () => {
     let url = `http://localhost:8080/Usuarios/todos`
     const resultado = await fetch(url, {
@@ -13,7 +15,7 @@ const obtenerUsuarios = async () => {
 }
 let correo ;
 const ObtenerUsuario = async () => {
-     let url = `http://localhost:8080/Usuarios/correo/${correo}`
+    let url = `http://localhost:8080/Usuarios/correo/${correo}`
     const resultado = await fetch(url, {
         method: 'GET'
     })
@@ -24,6 +26,18 @@ const ObtenerUsuario = async () => {
     localStorage.setItem('usuario', JSON.stringify(usuario));
     
     
+}
+const obtenerPreferencias_por_Usuario = async () => {
+    
+let url = `http://localhost:8080/preferencias/musicales/usuario/${User}`
+    const resultado = await fetch(url, {
+    method: 'GET'
+})
+
+    const preferencias = await resultado.json();
+    preferenciasporUsuario=preferencias
+    console.log(preferenciasporUsuario)
+    console.log(preferencias)
 }
 const crearUsuario = async () => {
     let url = 'http://localhost:8080/Usuarios/crear';
@@ -165,7 +179,18 @@ const login = async (e) => {
             alert("bienvenido")
             correo = payload.correo
             await ObtenerUsuario();
-            window.location.href = 'inicio.html';
+            const usuario = localStorage.getItem('usuario');
+            const UsuarioGuardado = JSON.parse(usuario)
+            User=UsuarioGuardado.codigo_usuario
+             let contador=0
+            await obtenerPreferencias_por_Usuario()
+            console.log(preferenciasporUsuario.length)
+                if(preferenciasporUsuario.length==0){
+                    window.location.href = 'inicio.html';
+                }else{
+                    window.location.href = 'index.html';
+                }
+            
         }
     } catch (error) {
         console.error("Error durante la autenticación:", error);
