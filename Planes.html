@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes Deezer</title>
+    <link rel="stylesheet" href="Planes.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="src/img/deezer.png" alt="Deezer Logo">
+            <span>DEEZER</span>
+            <i class="heart-icon"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Planes</a></li>
+                <li><a href="#">Ventajas</a></li>
+                <li><a href="#">Música</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="login">Iniciar sesión</button>
+            <button class="register">Registrarse</button>
+        </div>
+    </header>
+    <main>
+        <h1>Planes</h1>
+        <div class="pricing-cards">
+            <div class="card">
+                <div class="label premium">PREMIUM</div>
+                <div class="price">$9.99/mes</div>
+                <div class="offer">1 mes gratis</div>
+                <button class="subscribe">Suscribirse</button>
+                <a href="#" class="info-link">Más información</a>
+            </div>
+            <div class="card">
+                <div class="label family">FAMILY</div>
+                <div class="price">$14.99/mes</div>
+                <div class="offer">1 mes gratis</div>
+                <button class="subscribe">Suscribirse</button>
+                <a href="#" class="info-link">Más información</a>
+            </div>
+            <div class="card">
+                <div class="label free">Gratis</div>
+                <div class="price">$00.00/mes</div>
+                <button class="subscribe">Suscribirse</button>
+                <a href="#" class="info-link">Más información</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="toggle-buttons">
+            <button class="monthly active">Mensual</button>
+            <button class="annual">Anual -25%</button>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const monthlyButton = document.querySelector('.monthly');
+            const annualButton = document.querySelector('.annual');
+            const premiumPrice = document.querySelector('.card .price');
+            const familyPrice = document.querySelector('.card:nth-child(2) .price');
+            const premiumOffer = document.querySelector('.card .offer');
+            const familyOffer = document.querySelector('.card:nth-child(2) .offer');
+        
+            monthlyButton.addEventListener('click', function() {
+                monthlyButton.classList.add('active');
+                annualButton.classList.remove('active');
+                premiumPrice.textContent = '$9.99/mes';
+                familyPrice.textContent = '$14.99/mes';
+                premiumOffer.textContent = '1 mes gratis';
+                familyOffer.textContent = '1 mes gratis';
+            });
+        
+            annualButton.addEventListener('click', function() {
+                annualButton.classList.add('active');
+                monthlyButton.classList.remove('active');
+                premiumPrice.textContent = '$107.99/año';
+                familyPrice.textContent = '$218.99/año';	
+                premiumOffer.textContent = '25% de descuento cada año';
+                familyOffer.textContent = '8% de descuento cada año';   
+            });
+        });
+    </script>
+
+</body>
+</html>
