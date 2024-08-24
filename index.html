@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Deezer Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="explorar.css">
+</head>
+    <body>
+    <div class="container">
+        <nav>
+            <h1>Deezer</h1>
+            <ul>
+                <li>
+                    <a href="index.html" class="custom-button">
+                        <i class="fas fa-home"></i> Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="Explorar.html" class="custom-button">
+                        <i class="fa-regular fa-compass"></i> Explorar
+                    </a>
+                </li>
+                <li>
+                    <a href="Favoritos.html" class="custom-button">
+                        <i class="fa-solid fa-heart"></i> Favoritos
+                    </a>
+                </li>
+            </ul>
+            <p>
+                Estás en Deezer Free, actualiza para eliminar anuncios.
+                <br>                    
+                <button>Suscribirse</button>
+            </p>
+            <div class="playlists">
+                <div class="header">
+                    <h2>Playlists</h2> 
+                    <button>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <ul>
+                    <li>
+                        <button>
+                            <img src="src/img/love.jpg" alt="Heart Icon">
+                            <p>Canciones favoritas</p>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <img src="src/img/love.jpg" alt="Heart Icon">
+                            <p>Loved Tracks</p>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    <main>
+    <input type="text" placeholder="Artistas, canciones, podcasts...">
+    <h2>RECOMENDACIONES</h2>
+    
+    <div class="feature-cards row" id="contenido" style="width: 100%  ">
+    
+    
+    </div>
+    
+
+
+</main>
+
+</div>
+<div class="music-player">
+    <div class="song-controls">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-plus"></i>
+        <i class="fas fa-random"></i>
+        <i class="fas fa-step-backward backward-button"></i>
+        <i class="fas fa-play play-button"></i>
+        <i class="fas fa-step-forward forward-button"></i>
+        <i class="fas fa-repeat"></i>
+    </div>
+    <div class="progress-bar">
+        <span class="current-time">00:00</span>
+        <div class="progress-container">
+            <div class="progress"></div>
+        </div>
+        <span class="total-time">00:00</span>
+    </div>
+    <audio id="audio-player" src="src/canciones/Joji - Die For You.mp3"></audio>
+    <div class="extra-controls">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-volume-up"></i>
+        <i class="fas fa-stream"></i>
+    </div>
+</div>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const audioPlayer = document.getElementById('audio-player');
+        const playButton = document.querySelector('.play-button');
+        const forwardButton = document.querySelector('.forward-button');
+        const backwardButton = document.querySelector('.backward-button');
+        const progressBar = document.querySelector('.progress');
+        const currentTimeElement = document.querySelector('.current-time');
+        const totalTimeElement = document.querySelector('.total-time');
+
+        playButton.addEventListener('click', function() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playButton.classList.remove('fa-play');
+                playButton.classList.add('fa-pause');
+            } else {
+                audioPlayer.pause();
+                playButton.classList.remove('fa-pause');
+                playButton.classList.add('fa-play');
+            }
+        });
+
+        forwardButton.addEventListener('click', function() {
+            audioPlayer.currentTime += 10;
+        });
+
+        backwardButton.addEventListener('click', function() {
+            audioPlayer.currentTime -= 10;
+        });
+
+        audioPlayer.addEventListener('timeupdate', function() {
+            const currentTime = audioPlayer.currentTime;
+            const duration = audioPlayer.duration;
+            const progressPercent = (currentTime / duration) * 100;
+            progressBar.style.width = progressPercent + '%';
+
+            currentTimeElement.textContent = formatTime(currentTime);
+            totalTimeElement.textContent = formatTime(duration);
+        });
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        let input = document.querySelector('input[type="text"]');
+
+        input.addEventListener('focus', function() {
+            this.style.backgroundColor = '#EBE7EE';
+        }, false);
+
+        input.addEventListener('blur', function() {
+            if (this.value.length === 0) {
+                this.style.backgroundColor = 'transparent';
+            }
+        }, false);
+
+        let menuButtons = document.querySelectorAll('.menu-button');
+
+        menuButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                menuButtons.forEach(btn => btn.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        let customButtons = document.querySelectorAll('.custom-button');
+
+        customButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                customButtons.forEach(btn => btn.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+    });
+        document.addEventListener('DOMContentLoaded', function() {
+            const playlistsButton = document.getElementById('playlists-button');
+            const playlistsContainer = document.getElementById('playlists-container');
+            const playlists = JSON.parse(localStorage.getItem('playlists')) || {};
+    
+            function renderPlaylists() {
+                playlistsContainer.innerHTML = '';
+                for (const [name, details] of Object.entries(playlists)) {
+                    const li = document.createElement('li');
+                    li.textContent = name;
+                    playlistsContainer.appendChild(li);
+                }
+            }
+    
+            playlistsButton.addEventListener('click', function() {
+                if (playlistsContainer.style.display === 'none') {
+                    renderPlaylists();
+                    playlistsContainer.style.display = 'block';
+                } else {
+                    playlistsContainer.style.display = 'none';
+                }
+            });
+        });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/38bde20848.js" crossorigin="anonymous"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
+
