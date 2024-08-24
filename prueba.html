@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Explorar.css">
+    <link href="https://db.onlinewebfonts.com/c/2170a4d71c4da1e4af6ac9f1dd8df365?family=Syntax+Next+LT+W04+Black" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="music-player">
+        <div class="song-controls">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-plus"></i>
+            <i class="fas fa-random"></i>
+            <i class="fas fa-step-backward backward-button"></i>
+            <i class="fas fa-play play-button" onclick="playSong()"style="
+            width: 100px;
+            height: 100px;
+            background-color: red !important;" ></i>
+            <i class="fas fa-step-forward forward-button"></i>
+            <i class="fas fa-repeat"></i>
+        </div>
+        <div class="progress-bar">
+            <span class="current-time">00:00</span>
+            <div class="progress-container">
+                <div class="progress"></div>
+            </div>
+            <span class="total-time">00:00</span>
+        </div>
+        <audio id="audio-player"></audio>
+        <div class="extra-controls">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-volume-up"></i>
+            <i class="fas fa-stream"></i>
+        </div>
+    </div>
+    
+    <script>
+    function playSong() {
+        const audioPlayer = document.getElementById('audio-player');
+        const songUrl = 'src/canciones/Like that.mp3'; // Reemplaza esto con la URL de la canción
+        audioPlayer.src = songUrl; // Asigna la URL al elemento audio
+        audioPlayer.play(); // Inicia la reproducción
+    }
+    </script>
+</body>
+</html>
+
+

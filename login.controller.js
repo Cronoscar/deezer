@@ -13,14 +13,16 @@ const obtenerUsuarios = async () => {
 }
 let correo ;
 const ObtenerUsuario = async () => {
-     let url = `http://localhost:8080/Usuarios//correo/${correo}`
+     let url = `http://localhost:8080/Usuarios/correo/${correo}`
     const resultado = await fetch(url, {
         method: 'GET'
     })
 
     const usuario = await resultado.json();
-
     console.log(usuario)
+    
+    localStorage.setItem('usuario', JSON.stringify(usuario));
+    
     
 }
 const crearUsuario = async () => {
@@ -159,10 +161,11 @@ const login = async (e) => {
             alert("Fallo al autenticar");
         } else {
             console.log("Autenticado");
-            window.location.href = 'inicio.html';
+            
             alert("bienvenido")
             correo = payload.correo
-            console.log(ObtenerUsuario())
+            await ObtenerUsuario();
+            window.location.href = 'inicio.html';
         }
     } catch (error) {
         console.error("Error durante la autenticación:", error);
