@@ -37,6 +37,8 @@ public class Cancion {
     private int cantidad_favoritos;
     @Column(name="url")
     private String url;
+    @Column(name="portada")
+    private String portada;
     @ManyToOne
     @JoinColumn(name = "codigo_discografica",referencedColumnName = "codigo_discografica")
     @JsonBackReference("discografica_Cancion")

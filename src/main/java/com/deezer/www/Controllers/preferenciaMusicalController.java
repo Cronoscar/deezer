@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.deezer.www.DTO.Preferencia;
 import com.deezer.www.Models.Preferencia_Musical;
 import com.deezer.www.Services.impl.preferencia_musicalServiceimpl;
 
@@ -16,7 +17,7 @@ public class preferenciaMusicalController {
     private preferencia_musicalServiceimpl preferencia_musicalServiceimpl;
     
     @PostMapping("/crear")
-    public String nuevaPreferenciaMusical (@RequestBody Preferencia_Musical nPreferencia_Musical){
+    public String nuevaPreferenciaMusical (@RequestBody Preferencia nPreferencia_Musical){
         return this.preferencia_musicalServiceimpl.nuevapreferencia_musical(nPreferencia_Musical);
     }
 }
