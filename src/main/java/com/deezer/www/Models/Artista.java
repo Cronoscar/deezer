@@ -61,4 +61,5 @@ public class Artista {
     @OneToMany(mappedBy = "artista")
     @JsonIgnore
     private List<Cancion_X_Artista> cancion_X_Artistas;
+    
 }

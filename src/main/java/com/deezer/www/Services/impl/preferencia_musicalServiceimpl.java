@@ -11,6 +11,7 @@ import com.deezer.www.Repositorys.artistaRepository;
 import com.deezer.www.Repositorys.cancionRepository;
 import com.deezer.www.Repositorys.preferencia_musicalRepository;
 import com.deezer.www.Repositorys.usuarioRepository;
+import java.util.List;
 import com.deezer.www.Services.preferencia_musicalService;
 @Service
 public class preferencia_musicalServiceimpl implements preferencia_musicalService {
@@ -42,6 +43,11 @@ public class preferencia_musicalServiceimpl implements preferencia_musicalServic
     nuevapreferencia.setArtista(nueArtista);
     nuevapreferencia.setUsuario(nUsuario);
     return nuevapreferencia ;
+    }
+    @Override
+    public List<Preferencia_Musical> getPreferenciasByCodigoUsuario(Integer codigoUsuario) {
+    
+        return this.preferencia_musicalRepository.findByCodigoUsuario(codigoUsuario);
     }
     
 }

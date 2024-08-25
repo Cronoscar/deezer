@@ -27,8 +27,6 @@ public class Plan {
     private Date fecha_inicio;
     @Column(name = "fecha_fin")
     private Date fecha_fin;
-    @Column(name = "precio")
-    private int precio;
     @ManyToOne
     @JoinColumn(name = "codigo_periodo",referencedColumnName = "codigo_periodo")
     @JsonBackReference("periodo_reference")

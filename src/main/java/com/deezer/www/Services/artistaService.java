@@ -8,4 +8,5 @@ public interface artistaService {
 
     public List<Artista> obtenertodosArtistas();
     public String crearArtista(Artista nuevoArtista);
+    public Artista obtenerArtistaporID(int codigo_artista);
 }

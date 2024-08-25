@@ -1,6 +1,10 @@
 package com.deezer.www.Controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,5 +23,11 @@ public class preferenciaMusicalController {
     @PostMapping("/crear")
     public String nuevaPreferenciaMusical (@RequestBody Preferencia nPreferencia_Musical){
         return this.preferencia_musicalServiceimpl.nuevapreferencia_musical(nPreferencia_Musical);
+    }
+    @GetMapping("/usuario/{codigo_usuario}")
+    public List<Preferencia_Musical> obtenerpreferenciasporusuario (@PathVariable Integer codigo_usuario){
+
+        return this.preferencia_musicalServiceimpl.getPreferenciasByCodigoUsuario(codigo_usuario);
+
     }
 }

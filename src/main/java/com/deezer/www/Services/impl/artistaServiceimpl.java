@@ -31,6 +31,11 @@ public class artistaServiceimpl implements artistaService {
        }
     }
 
+    @Override
+    public Artista obtenerArtistaporID(int codigo_artista) {
+        return this.artistaRepository.findById(codigo_artista).get();
+    }
+
     
     
 }

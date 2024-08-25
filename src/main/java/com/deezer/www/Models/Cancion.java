@@ -53,6 +53,7 @@ public class Cancion {
     @OneToMany(mappedBy = "cancion")
     @JsonIgnore
     private List<Favorito> favoritos;
+    
     @OneToMany(mappedBy = "cancion")
     @JsonIgnore
     private List<Historial_Reproduccion> historial_Reproducciones;
