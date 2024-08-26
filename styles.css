@@ -1,282 +1,323 @@
-/* Estilos generales */
+.corazon-rojo {
+    color: red; /* Cambia el color a rojo */
+}
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+}
+.container {
     display: flex;
-    height: 100vh;
-    background-color: #fff;
 }
-.sidebar {
+nav {
     width: 200px;
-    background-color: #f8f8f8;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    flex: 0 0 200px;
-    padding: 20px;
+    background-color: #FFFFFF;
 }
-
-.sidebar h1 {
-    color: #ef5466;
-    font-size: 24px;
-    margin-bottom: 20px;
+nav h1 {
+    text-align: center;
 }
-
-.sidebar ul {
+nav ul {
     list-style-type: none;
     padding: 0;
-    
+}
+nav ul li {
+    margin-bottom: 10px;
+}
+nav ul li button {
+    width: 100%;
+    display: block;
+}
+main {
+    margin-left: 20px;
+}
+main input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+main h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+main p {
+    color: #888;
+    margin-bottom: 20px;
+}
+main ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin-bottom: 20px;
+}
+main ul li {
+    margin-right: 20px;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e7e7e7;
+}
+.playlists {
+    padding: 20px;
 }
 
-.sidebar li {
-    margin-bottom: 15px;
+.playlists h2 {
+    color: #000000;
 }
 
-.sidebar a {
+.playlists ul {
+    list-style: none;
+    padding: 0;
+}
+
+.playlists ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.playlists ul li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.playlists button {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playlists button img {
+    width: 20px;
+    height: 20px;
+}
+.container > nav {
+    background-color: #F5F2F8;
+}
+.container > nav > p {
+    background-color: #A238FF;
+    padding: 10px; 
+    color: white;
+    font-family: 'Orev Edge Extra Bold', sans-serif;
+}
+nav > p {
+    background-color: #A238FF;
+    padding: 10px; 
+    color: white;
+    border-radius: 10px; 
+}
+
+nav > p > button {
+    background-color: #8131C9;
+    color: white;
+    border-radius: 10px; 
+    border: 2px solid #FDFCFE; 
+    margin-top: 10px; 
+    padding: 10px; 
+}
+
+nav > p > button:hover {
+    background-color: #5a1a8e; 
+}
+.playlists ul li img {
+    width: 50px; 
+    height: 50px; 
+}
+button {
+    cursor: pointer;
+   
+}
+.playlists .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playlists .header > h2 {
+    margin-right: 10px; 
+}
+
+.playlists .header > button {
+    cursor: pointer;
+}
+.custom-button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none; 
+    text-align: left; 
+    padding-left: 10px; 
+    font-size: 20px; 
+}
+h1 {
+    font-family: 'arial black', sans-serif;
+    font-size: 36px;
+}
+h3 {
+    font-family: 'arial black', sans-serif;
+    font-size: 50px;
+}
+input[type="text"] {
+    border-radius: 8px; 
+    padding: 10px; 
+}
+.menu-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
     text-decoration: none;
-    color: #72727d;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6); 
+}
+
+.menu-button:hover {
+    color: black; 
+}
+
+.menu-button::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: gray;
+    transition: width .3s;
+}
+
+.menu-button:hover::after {
+    width: 100%; 
+    margin-top: 5px; 
+}
+
+.menu-button.selected {
+    font-weight: bold; 
+    color: black;
+}
+
+.menu-button.selected::after {
+    width: 100%;
+    background: purple; 
+}
+.custom-button.selected {
+    color: purple; 
+}
+.music-player {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 768px;
+    background-color: var(--tempo-colors-background-neutral-secondary-default);
+    bottom: 0px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: var(--tempo-colors-border-neutral-primary-default);
+    height: var(--layout-player-height);
+    left: 0px;
+    padding-inline-start: var(--tempo-space-spacing-l);
+    padding-inline-end: var(--tempo-space-spacing-l);
+    position: fixed;
+    right: 0px;
+}
+
+.song-info {
     display: flex;
     align-items: center;
 }
 
-.sidebar .icon {
+.album-cover {
+    width: 40px;
+    height: 40px;
     margin-right: 10px;
-    font-size: 20px;
 }
 
-.sidebar a:hover {
-    color: #ef5466;
-}
-
-.main-content {
-    flex: 1;
+.song-details {
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    padding-left: 40px;
-    padding: 20px 40px;
 }
-header {
-    justify-content: space-between;
-    border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 10px 20px;
+
+.song-title, .artist-name {
+    margin: 0;
+    font-size: 12px;
+}
+
+.song-controls, .extra-controls {
+    display: flex;
     align-items: center;
-    display: flex; 
+    margin: 5px 0;
 }
 
-/* Estilos para el input de búsqueda */
-header input[type="search"] {
-    position: relative;
-    width: 80%;
-    max-width: 600px;
-    margin: 20px auto;
-    display: block;
-    padding: 10px 40px 10px 20px;
-    border: none;
-    border-radius: 20px;
-    background-color: #f0f0f0;
-    background: url('path_to_search_icon.svg') no-repeat right 10px center;
-    padding-left: 30px;
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    background-size: 20px;
+.song-controls i, .extra-controls i {
+    margin: 0 5px;
+    cursor: pointer;
 }
-.search-container input[type="search"] {
-    width: 100%;
-    padding: 10px 40px 10px 20px;
-    border: none;
-    border-radius: 20px;
-    background-color: #f0f0f0;
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.progress-container {
     flex-grow: 1;
-    margin: 0 20px;
-}
-.search-icon {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 18px;
+    height: 5px;
+    background-color: #444;
+    margin: 0 10px;
+    position: relative;
 }
 
-/* Estilos para el menú de usuario */
-.user-menu {
-    background-color: #ef5466;
-    color: white;
-    width: 32px;
-    height: 32px;
-    padding: 5px 10px;
-    border-radius: 50%;
+.progress {
+    height: 50%;
+    background-color: #1db954;
+    width: 0;
+}
+
+.current-time, .total-time {
+    font-size: 12px;
+}
+
+
+
+.cards {
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.user-section {
-    display: flex;
-    align-items: center;
-}
-
-.notifications {
-    font-size: 20px;
-    margin-right: 15px;
-    cursor: pointer;
-}
-
-/* Estilos para las tarjetas de características */
-.feature-cards {
-    display: flex;
     gap: 20px;
-
 }
 
 .card {
-    
-    max-width: calc(50% - 10px);
-    background-color: white;
-    border-radius: 10px;
-    
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
+    display: inline-block;
+    width: 200px; /* Ajusta el tamaño según sea necesario */
+    margin: 10px;
+    border-radius: 15px; /* Hace los bordes ovalados */
+    overflow: hidden; /* Asegura que el contenido no se desborde fuera de los bordes redondeados */
+    border: none; /* Elimina el borde del botón */
+    padding: 0; /* Elimina el padding del botón */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que es un botón */
+    background: none; /* Elimina el fondo del botón */
 }
 
 .card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
+    height: auto;
+    display: block;
 }
 
-.flow-section {
-    margin-top: 30px;
-}
-
-.flow-section h2 {
-    margin-bottom: 10px;
-  }
-
-.mood-icons {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.mood-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-  }
-.card h3 {
-    padding: 15px;
-    margin: 0;
-    color: #32323d;
-}
-
-/* Añade aquí más estilos para .card img y .card h3 */
-/* Estilos para la página de configuración */
-.config-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 30px 40px;
-    background-color: #121216;
-    color: #fff;
-}
-
-.config-menu h2 {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    color: #b3b3b3;
-    font-size: 12px;
-    text-transform: uppercase;
-}
-
-.config-container h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.config-menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: 25px;
-}
-
-.config-menu li {
-    padding: 10px 0;
-    border-bottom: 1px solid #2c2c2c;
-}
-
-.config-menu a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.config-menu .modo-oscuro {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.config-link:hover {
-    text-decoration: underline;
-}
-
-/* Estilo mejorado para el interruptor */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
+.card p {
     position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
+    bottom: 10px; /* Ajusta la distancia desde la parte inferior */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white; /* Cambia el color del texto según sea necesario */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    width: 90%; /* Ajusta el ancho según sea necesario */
+    font-weight: bold; /* Hace el texto en negrita */
+    font-size: 18px;
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider {
-    background-color: #1ed760;
-}
-
-input:checked + .slider:before {
-    transform: translateX(26px);
-}
-
-/* Añadir más espacio entre secciones */
-.config-menu h2 {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    color: #b3b3b3;
-    font-size: 14px;
-    text-transform: uppercase;
+.card:hover {
+    opacity: 0.7; /* Hace que la card se vuelva opaca al pasar el cursor */
 }
