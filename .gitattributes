@@ -1,0 +1,2 @@
+*.exe filter=lfs diff=lfs merge=lfs -text
+src/canciones/OBS-Studio-30.2.3-Windows-Installer.exe filter=lfs diff=lfs merge=lfs -text
