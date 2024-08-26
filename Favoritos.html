@@ -5,6 +5,35 @@
         <link rel="stylesheet" href="Explorar.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link href="https://db.onlinewebfonts.com/c/2170a4d71c4da1e4af6ac9f1dd8df365?family=Syntax+Next+LT+W04+Black" rel="stylesheet">
+        <style>
+            .music-player {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                height: 30px;
+                right: 0;
+                background-color: #f8f9fa; /* Color de fondo */
+                padding: 10px; /* Espaciado */
+                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+                z-index: 1000; /* Asegura que esté por encima de otros elementos */
+            }
+            
+            .song-controls, .progress-bar, .extra-controls {
+                display: flex;
+                justify-content: space-between; /* Espacio entre los controles */
+                align-items: center; /* Centra verticalmente */
+            }
+            
+            .progress-container {
+                flex-grow: 1; /* Permite que la barra de progreso use el espacio disponible */
+                margin: 0 10px; /* Margen entre la barra de progreso y los controles */
+            }
+            
+            .progress {
+                height: 5px; /* Altura de la barra de progreso */
+                background-color: #007bff; /* Color de la barra de progreso */
+            }
+            </style>
     </head>
     <body>
         <div class="container">
@@ -30,7 +59,7 @@
                 <p>
                     Estás en Deezer Free, actualiza para eliminar anuncios.
                     <br>                    
-                    <button>Suscribirse</button>
+                    <button ondblclick="window.location.href = 'Planes.html'">Suscribirse</button>
                 </p>
                 <div class="playlists">
                     <div class="header">
@@ -59,92 +88,19 @@
             
             <input type="text" placeholder="Artistas, canciones, podcasts...">
             <h3>Favoritos</h3>
-            <p>0 seguidores | 0 seguidos</p>
-            <ul>
-                <li><button class="menu-button">Destacados</button></li>
-                <li><button class="menu-button">Canciones favoritas</button></li>
-                <li><button class="menu-button">Playlists</button></li>
-                <li><button class="menu-button">Álbumes</button></li>
-                <li><button class="menu-button">Artistas</button></li>
-                <li><button class="menu-button">Historial</button></li>
-            </ul>
-            <h2>Escuchado recientemente</h2>
-                <div class="cards">
-                    <div class="card">
-                        <img src="src/img/too leng.jpg" alt="viral rewind">
-                        <div class="card-buttons">
-                            <button><i class="fas fa-play"></i></button>
-                            <button><i class="fas fa-heart"></i></button>
-                            <button><i class="fas fa-ellipsis-h"></i></button>
-                        </div>
-                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="viral rewind">Too leng</a></div>
-                        <div class="heading-5-sub">21 Savage</div>
-                    </div>
-                    <div class="card">
-                        <img src="src/img/hn.jpg" alt="Vibe Check">
-                        <div class="card-buttons">
-                            <button><i class="fas fa-play"></i></button>
-                            <button><i class="fas fa-heart"></i></button>
-                            <button><i class="fas fa-ellipsis-h"></i></button>
-                        </div>
-                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="vibe check">Selección Editorial HN</a></div>
-                        <div class="heading-5-sub">Pública</div>
-                    </div>
-                    <div class="card">
-                        <img src="src/img/love.jpg" alt="Good Stuff">
-                        <div class="card-buttons">
-                            <button><i class="fas fa-play"></i></button>
-                            <button><i class="fas fa-heart"></i></button>
-                            <button><i class="fas fa-ellipsis-h"></i></button>
-                        </div>
-                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="good stuff">Canciones favoritas</a></div>
-                        <div class="heading-5-sub">Pública</div>
-                    </div>
+          
+            <h2>Canciones</h2>
+            <div class="container-fluid">
+                <div class=" row" id="contenido">
+                </div>  
+                    
                 </div>
                 <h2>Artistas <button>Ver todo</button></h2>
-                <div class="cards">
-                    <a href="Artistas.html" class="card-link">
-                    <div class="card">
-                        <img class="circular-image" src="src/img/metro.jpg" alt="Vibe Check">
-                        <div class="card-buttons">
-                            <button><i class="fas fa-play"></i></button>
-                            <button><i class="fas fa-heart"></i></button>
-                            <button><i class="fas fa-ellipsis-h"></i></button>
-                        </div>
-                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="vibe check">Metro Boomin</a></div>
-                        <div class="heading-5-sub">547,950 seguidores</div>
-                    </div>
-                </a>
-                    <div class="card">
-                        <img class="circular-image" src="src/img/eminem.jpg" alt="Good Stuff">
-                        <div class="card-buttons">
-                            <button><i class="fas fa-play"></i></button>
-                            <button><i class="fas fa-heart"></i></button>
-                            <button><i class="fas fa-ellipsis-h"></i></button>
-                        </div>
-                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="good stuff">Eminem</a></div>
-                        <div class="heading-5-sub">17,464,780 seguidores</div>
-                    </div>
-                    <div class="card">
-                        <img class="circular-image" src="src/img/empire.jpg" alt="Vibe Check">
-                        <div class="card-buttons">
-                            <button><i class="fas fa-play"></i></button>
-                            <button><i class="fas fa-heart"></i></button>
-                            <button><i class="fas fa-ellipsis-h"></i></button>
-                        </div>
-                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="vibe check">Empire Of The Sun</a></div>
-                        <div class="heading-5-sub">381,864 seguidores</div>
-                    </div>
-                    <div class="card">
-                        <img class="circular-image" src="src/img/empire.jpg" alt="Good Stuff">
-                        <div class="card-buttons">
-                            <button><i class="fas fa-play"></i></button>
-                            <button><i class="fas fa-heart"></i></button>
-                            <button><i class="fas fa-ellipsis-h"></i></button>
-                        </div>
-                        <div class="heading-4"><a class="chakra-link css-1nvflm0" title="good stuff">Canciones favoritas</a></div>
-                        <div class="heading-5-sub">Pública</div>
-                    </div>
+                <div class="container-fluid">
+                <div class="row " id="contenido2">
+                    
+                </div>
+                </div>
             <div class="song-card">
             </div>
         </main>
@@ -165,13 +121,15 @@
                 </div>
                 <span class="total-time">00:00</span>
             </div>
-            <audio id="audio-player" src="src/canciones/Like that.mp3"></audio>
+            <audio id="audio-player" src="src/canciones/Joji - Die For You.mp3"></audio>
             <div class="extra-controls">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-volume-up"></i>
                 <i class="fas fa-stream"></i>
             </div>
         </div>
+        
+        
         
         <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -205,8 +163,8 @@
         
                 audioPlayer.addEventListener('timeupdate', function() {
                     const currentTime = audioPlayer.currentTime;
-                    const duration = audioPlayer.duration;
-                    const progressPercent = (currentTime / duration) * 100;
+                    const duration = audioPlayer.duration*10;
+                    const progressPercent = (currentTime / duration) ;
                     progressBar.style.width = progressPercent + '%';
         
                     currentTimeElement.textContent = formatTime(currentTime);
@@ -249,6 +207,30 @@
                     });
                 });
             });
+                document.addEventListener('DOMContentLoaded', function() {
+                    const playlistsButton = document.getElementById('playlists-button');
+                    const playlistsContainer = document.getElementById('playlists-container');
+                    const playlists = JSON.parse(localStorage.getItem('playlists')) || {};
+            
+                    function renderPlaylists() {
+                        playlistsContainer.innerHTML = '';
+                        for (const [name, details] of Object.entries(playlists)) {
+                            const li = document.createElement('li');
+                            li.textContent = name;
+                            playlistsContainer.appendChild(li);
+                        }
+                    }
+            
+                    playlistsButton.addEventListener('click', function() {
+                        if (playlistsContainer.style.display === 'none') {
+                            renderPlaylists();
+                            playlistsContainer.style.display = 'block';
+                        } else {
+                            playlistsContainer.style.display = 'none';
+                        }
+                    });
+                });
         </script>
+        <script src="js/Favoritos.js"></script>
         </body>
         </html>

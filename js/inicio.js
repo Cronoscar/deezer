@@ -63,7 +63,7 @@ obtenerAristas();
 */
 let artistasSeleccionados = []
 function generarArtistas() {
-    alert("Seleccione 15 artistas por favor ")
+    alert("Seleccione 5 artistas por favor ")
     Todo_Artistas.forEach(artista => {
         const artistaDiv = document.createElement('div');
         artistaDiv.className = 'col-2';
@@ -149,14 +149,14 @@ const enviarPreferencia = async (preferencia) => {
 
  function mandar() {
     artistasSeleccionados.forEach(artista => {
-        // Crea un objeto Preferencia con los datos necesarios
+        
         const preferencia = {
         fecha_creacion: new Date().toISOString(),
         codigo_usuario: UsuarioGuardado.codigo_usuario,
         codigo_artista: artista
         };
     
-        // Envía el objeto Preferencia al backend
+        
          enviarPreferencia(preferencia);
     })
     window.location.href = 'index.html';
